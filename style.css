@@ -1,85 +1,58 @@
-body{
-    background-image: radial-gradient(rgb(0, 0, 161),rgb(75, 2, 75));
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+body {
+    font-family: "Josefin Sans", serif;
     margin: 0;
-    
+    padding: 0;
+    box-sizing: border-box;
 }
-#weather-container{
-    background-color: rgba(131, 19, 206, 0.466);
-    max-width: 400px;
+
+header {
+    text-align: center;
+    background-color: azure;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+#temp-div, #weather-info {
+    margin: 20px 0;
+}
+
+#weather-icon {
+    display: none;
+    margin: 20px auto;
+}
+
+#hourly-forecast {
+    display: flex; /* Ensures items are arranged in a row */
+    flex-wrap: wrap; /* Allows wrapping to the next row */
+    gap: 20px; /* Adds spacing between items */
+    justify-content: center; /* Centers all forecast items */
+    margin-top: 20px;
+}
+
+.hourly-item {
+    display: flex; /* Ensures each item is in a row */
+    flex-direction: column; /* Places content in a column */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid #ccc; /* Adds a border */
+    border-radius: 8px; /* Adds rounded corners */
+    background-color: #f9f9f9; /* Adds a background color */
+    width: 120px; /* Ensures consistent width */
     text-align: center;
 }
-h2, label, p{
-    color: #fff;
-    margin: 8px 0;
+
+.hourly-item img {
+    width: 50px; /* Sets a fixed size for the icon */
+    height: 50px;
+    margin: 10px 0;
 }
-input{
-    width: calc(100% - 16px);
-    padding: 8px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: 1px solid white;
-    margin-top: 20px;
-}
-button{
-    background: #6b03b6e7;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    width: 100px;
-    font-size: 15px;
-}
-button:hover{
-    background: #7304f3;
-}
-#temp-div p{
-    font-size: 60px;
-    margin-top: -30px;
-}
-#weather-info{
-    font-size: 20px;
-}
-#weather-icon{
-    width: 200px;
-    height: 200px;
-    margin-bottom: 0;
-    margin: 0 auto 10px;
-    display: none;
-}
-#hourly-forecast{
-    margin-top: 50px;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    justify-content: space-between;
-}
-#hourly-item{
-    flex: 0 0 auto;
-    width: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 10px;
-    color: white;
-}
-#hourly-item img{
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-}
-#hourly-heading{
-    color: #fff;
-    margin-top: 10px;
+
+.hourly-item span {
+    font-size: 1rem; /* Adjust font size */
+    margin: 5px 0;
 }
